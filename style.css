@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+*{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    /* ## Colors */
+
+/* ### Primary */
+--Soft-orange: hsl(35, 77%, 62%);
+--Soft-red: hsl(5, 85%, 63%);
+
+/* ### Neutral */
+
+--Off-white: hsl(36, 100%, 99%);
+--Grayish-blue: hsl(233, 8%, 79%);
+--Dark-grayish-blue: hsl(236, 13%, 42%);
+--Very-dark-blue: hsl(240, 100%, 5%);
+}
+html{
+    font-size: 15px;
+}
+/* body{
+    width: 1200px;
+    margin: auto;
+    padding-bottom: 4rem;
+} */
+img{
+    /* width: 100%; */
+    max-width: 100%;
+}
+ul{
+    list-style-type: none;
+}
+p{
+    color: var(--Dark-grayish-blue);
+    line-height: 1.8rem;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 18px;
+    color: var(--Very-dark-blue);
+    font-size: 30px;
+}
+.header nav{
+    opacity: 0;
+    z-index: -999;
+}
+.header nav.open{
+    position: fixed;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    /* left: 0; */
+    width: 75vw;
+    padding: 1.25rem;
+    /* opacity: 1; */
+    z-index: 99999999999;
+}
+.header nav ul{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.header nav ul li{
+    margin: 2rem 0;
+    font-size: 16px;
+
+}
+.header .menubtn button{
+    background: transparent;
+    border: none;
+    overflow: none;
+    cursor: pointer;
+}
+.header #menuclose{
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    right:18px;
+    z-index: 99999;
+    cursor: pointer;
+}
+.showcase{
+    padding: 18px;
+    padding-top: 0;
+}
+.showcase h2{
+    font-weight:800 ;
+    color: var(--Very-dark-blue);
+    font-size: 2rem;
+    margin: 1rem 0;
+
+}
+.showcase div:first-child article p{
+    margin-bottom: 15px;
+}
+.showcase div:first-child article button{
+    background-color: var(--Soft-red);
+    border: none;
+    padding: 10px 30px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out ;
+}
+.showcase div:first-child article button:hover{
+    background-color: var(--Very-dark-blue);
+}
+.showcase > div:last-child{
+    background-color: var(--Very-dark-blue);
+    margin-top: 50px;
+    padding: 20px;
+}
+.showcase > div:last-child h2{
+    color: var(--Soft-orange);
+    margin-bottom: 12px;
+    /* padding: 15px; */
+}
+.showcase > div:last-child h3{
+    color: var(--Off-white);
+    margin-bottom: 5px;
+    /* font-size: 26px; */
+}
+.showcase > div:last-child h3:hover{
+    color: var(--Soft-orange);
+    cursor: pointer;
+}
+.showcase > div:last-child article:not(:last-child){
+    border-bottom: 2px var(--Dark-grayish-blue) solid;
+    /* margin-bottom: 20px; */
+}
+.showcase > div:last-child article{
+    padding:20px 0;
+}
+.cards{
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* margin-bottom: 20px; */
+}
+.cards article{
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-around; */
+    gap: 20px;
+    margin-bottom: 10px;
+}
+ .cards img{
+    width: 120px;
+    /* height: 170px; */
+    /* margin-top: 10px; */
+} 
+.cards article span{
+    color: var(--Grayish-blue);
+    font-weight: bold;
+    font-size: 2rem;
+}
+.cards article h4{
+    font-size: 20px;
+    color: var(--Very-dark-blue);
+    /* font-weight: bold; */
+}
+.cards article div{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around; 
+}
+@media (min-width:768px){
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-top: 2rem;
+    }
+
+}
+@media (min-width:1024px){
+    .header #menubtn button{
+        display: none;
+    }
+    .header{
+        padding: 2rem 1.25rem;
+    }
+    .showcase{
+        display: flex;
+        gap: 20px;
+    }
+    .showcase > div:first-child article{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        place-items: center;
+        /* margin-top: 10px; */
+
+    }
+    .showcase > div:first-child article div{
+        margin-top: 2rem;
+    }
+    .showcase h2{
+        font-size: 3rem;
+    }
+    .showcase > div:last-child{
+        margin-top: 0;
+    }
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin: 2rem;
+    }
+
+}
+
+
+
+
