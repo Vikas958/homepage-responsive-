@@ -1,12 +1,9 @@
-const navbar=document.querySelector("nav");
-const openMenu=document.getElementById("menubtn");
-const closeMenu=document.getElementById("menuclose");
-
-openMenu.addEventListener("click", () =>{
-    navbar.classList.add("open");
-}
-);
-openMenu.addEventListener("click", () =>{
-    navbar.classList.remove("open");
-}
-);
+const mobNav = document.getElementById('Navmob');
+const hamopen= document.getElementById('menuopen');
+const hamclose = document.getElementById('menuclose');
+hamopen.addEventListener('click',()=>{
+    mobNav.classList.toggle('none');
+})
+hamclose.addEventListener('click',()=>{
+    mobNav.classList.toggle('none');
+})
