@@ -22,11 +22,42 @@
 html{
     font-size: 15px;
 }
-/* body{
-    width: 1200px;
-    margin: auto;
-    padding-bottom: 4rem;
-} */
+body{
+    padding: 10px;
+}
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10px;
+}
+.deskNav{
+    display:none;
+}
+#menuclose{
+    place-self:end;
+    margin:30px 10px;
+}
+.none{
+    display:none;
+}
+.block{
+    display:block;
+}
+.mobNav{
+    display:flex;
+    position:absolute;
+    flex-direction:column;
+    width:80%;
+    /* justify-content: space-between; */
+    align-items:flex-start;
+    padding-left:10px;
+    gap:20px;
+    background-color:white;
+    right:0;
+    height:100vh;
+    top:0;
+}
 img{
     /* width: 100%; */
     max-width: 100%;
@@ -37,55 +68,6 @@ ul{
 p{
     color: var(--Dark-grayish-blue);
     line-height: 1.8rem;
-}
-.header{
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    padding: 18px;
-    color: var(--Very-dark-blue);
-    font-size: 30px;
-}
-.header nav{
-    opacity: 0;
-    z-index: -999;
-}
-.header nav.open{
-    position: fixed;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    /* left: 0; */
-    width: 75vw;
-    padding: 1.25rem;
-    /* opacity: 1; */
-    z-index: 99999999999;
-}
-.header nav ul{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.header nav ul li{
-    margin: 2rem 0;
-    font-size: 16px;
-
-}
-.header .menubtn button{
-    background: transparent;
-    border: none;
-    overflow: none;
-    cursor: pointer;
-}
-.header #menuclose{
-    background: transparent;
-    border: none;
-    outline: none;
-    position: absolute;
-    right:18px;
-    z-index: 99999;
-    cursor: pointer;
 }
 .showcase{
     padding: 18px;
@@ -116,11 +98,11 @@ p{
 .showcase > div:last-child{
     background-color: var(--Very-dark-blue);
     margin-top: 50px;
-    padding: 20px;
+    padding: 10px 25px;
 }
 .showcase > div:last-child h2{
     color: var(--Soft-orange);
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
     /* padding: 15px; */
 }
 .showcase > div:last-child h3{
@@ -139,13 +121,7 @@ p{
 .showcase > div:last-child article{
     padding:20px 0;
 }
-.cards{
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    /* margin-bottom: 20px; */
-}
+
 .cards article{
     display: flex;
     /* align-items: center; */
@@ -172,8 +148,9 @@ p{
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-    justify-content: space-around; 
+    /* justify-content: space-around;  */
 }
+
 @media (min-width:768px){
     .cards{
         display: grid;
@@ -182,9 +159,36 @@ p{
     }
 
 }
+.cards{
+    /* all: unset; */
+    /* padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; */
+    /* all:unset; */
+    display: grid;
+    grid-template-columns: repeat(1,1fr) ;
+    margin-top: 2rem;
+    padding:18px;
+    margin-bottom: 20px;
+} 
+
 @media (min-width:1024px){
-    .header #menubtn button{
-        display: none;
+    body{
+        padding: 40px 60px;
+    }
+    .menubtn{
+        display:none;
+    }
+    .mobNav{
+        display:none;
+    }
+    .deskNav{
+        display:flex;
+        gap:20px;
+    }
+    #menubtn{
+        display:none;
     }
     .header{
         padding: 2rem 1.25rem;
@@ -193,6 +197,10 @@ p{
         display: flex;
         gap: 20px;
     }
+    .showcase > div:first-child{
+        max-width: 950px;
+    }
+    
     .showcase > div:first-child article{
         display: grid;
         grid-template-columns: repeat(2,1fr);
@@ -209,6 +217,10 @@ p{
     }
     .showcase > div:last-child{
         margin-top: 0;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     .cards{
         display: grid;
